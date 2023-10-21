@@ -342,7 +342,7 @@ class BertLMLearner(Learner):
             batch = batch.to(self.device)
 
             with torch.no_grad():
-                outputs = self.model(batch, masked_lm_labels=batch)
+                outputs = self.model(batch, labels=batch)
                 tmp_eval_loss = outputs[0]
                 eval_loss += tmp_eval_loss.mean().item()
 
