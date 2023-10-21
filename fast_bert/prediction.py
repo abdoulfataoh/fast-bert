@@ -65,6 +65,8 @@ class BertClassificationPredictor(object):
             no_cache=True,
         )
 
+        print(databunch, databunch.train_dl)
+
         learner = BertLearner.from_pretrained_model(
             databunch,
             self.model_path,
