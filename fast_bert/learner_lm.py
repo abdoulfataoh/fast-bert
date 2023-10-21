@@ -307,9 +307,9 @@ class BertLMLearner(Learner):
 
         if self.is_fp16:
             with autocast():
-                outputs = self.model(inputs, masked_lm_labels=labels)
+                outputs = self.model(inputs, labels=labels)
         else:
-            outputs = self.model(inputs, masked_lm_labels=labels)
+            outputs = self.model(inputs, labels=labels)
 
         loss = outputs[0]
 
